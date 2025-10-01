@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Sans-Serif;
+}
+html,body{
+  height: 100%;
+}
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.40),rgba(0,0,0,0.40)),url("wallpapper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.logo{
+  margin: 0 7.4px;
+  width: 69px;
+  cursor: pointer;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 20px;
+}
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.slider {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1000;
+}
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  flex:0 0 100%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+.prev, .next, .close {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  z-index: 1001;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+.close {
+  top: 20px;
+  right: 20px;
+  transform: none;
+  font-size: 30px;
+  border-radius: 10px;
+}
